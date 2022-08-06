@@ -1,0 +1,140 @@
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+*, *::after, *::before {
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+  }
+  
+  body {
+    font-size: 1.6rem;
+    font-family: "PT Sans", sans-serif;
+    color: #ffffff;
+    background-color: #262423;
+  }
+  
+  a {
+    color: #a8ae7e;
+    text-decoration: none;
+  }
+  
+  /* -------------------------------- 
+  
+  Patterns - reusable parts of our design
+  
+  -------------------------------- */
+  .cd-text-replace {
+    /* replace text with image */
+    color: transparent;
+    text-indent: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  /* -------------------------------- 
+  
+   Navigation
+  
+  -------------------------------- */
+  .cd-primary-nav {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    text-align: center;
+    display: table;
+  }
+  .cd-primary-nav ul {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .cd-primary-nav a {
+    display: inline-block;
+    padding: .4em 1em;
+    border-radius: 4px;
+    -webkit-transition: background 0.2s;
+    -moz-transition: background 0.2s;
+    transition: background 0.2s;
+    color: #ffffff;
+    font-family: "Merriweather", serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+      transition:0.3s linear;
+  }
+  .no-touch .cd-primary-nav a:hover {
+    color: #000000;
+  }
+  .cd-primary-nav .cd-label {
+    position: relative;
+    margin: 2.4em 0 2em;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+  .cd-primary-nav .cd-label::after {
+    /* line below .cd-label*/
+    content: '';
+    position: absolute;
+    left: 50%;
+    right: auto;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: -16px;
+    height: 1px;
+    width: 40px;
+    background-color: currentColor;
+  }
+  .cd-primary-nav.nav-visible {
+    opacity: 1;
+  }
+  .cd-primary-nav.nav-clickable {
+    z-index: 3;
+  }
+  .no-csstransitions .cd-primary-nav.nav-visible {
+    z-index: 3;
+  }
+  @media only screen and (min-width: 1170px) {
+    .cd-primary-nav a {
+      font-size: 4rem;
+    }
+  }
+  
+  /* -------------------------------- 
+  
+  JavaScript Disabled
+  
+  -------------------------------- */
+  .no-js .cd-primary-nav {
+    display: block;
+    position: static;
+    opacity: 1;
+    margin-bottom: 1.5em;
+  }
+  .no-js .cd-primary-nav ul {
+    display: block;
+    padding: 0 5%;
+  }
+  .no-js .cd-primary-nav ul::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  .no-js .cd-primary-nav li:not(.cd-label) {
+    display: inline-block;
+  }
+  
